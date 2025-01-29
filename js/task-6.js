@@ -20,14 +20,16 @@ function create(){
 
 function createBoxes(amount){
   container.innerHTML = ""
+  const allbox = [];
   for(let i = 0; i < amount; i++){
     const box = document.createElement('div')
     const wh = 30 + i * 10
     box.style.width = `${wh}px`;
     box.style.height = `${wh}px`;
     box.style.backgroundColor = getRandomHexColor()
-    container.appendChild(box)
+    allbox.push(box)
 }
+container.append(...allbox)
 }
 
 destroyButton.addEventListener('click', destroyBoxes)
